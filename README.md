@@ -8,6 +8,6 @@ Used to be live under https://go-stockticker.appspot.com/ but my Google SDK tria
 
 Run it locally (with a working Go installation from the Go/src folder) by CD-ing into the application folder and then "go run main.go"
 
-![cityweather.png](https://github.com/tjaensch/stockticker_google_sdk/stockticker.png)
+![cityweather.png](https://github.com/tjaensch/stockticker_google_sdk/blob/master/stockticker.png)
 
 
