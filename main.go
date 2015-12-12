@@ -26,17 +26,13 @@ var (
 const stocktickerTemplateHTML = ` 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Go, stocks, ticker, Google, Apple, Microsoft, sample app">
     <meta name="author" content="Thomas Jaensch">
-
     <title>Go Stock Ticker</title>
-
     <!-- Bootstrap Core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -45,18 +41,14 @@ const stocktickerTemplateHTML = `
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
-
 <body>
-
     <!-- Full Width Image Header -->
     <header class="header-image">
         <div class="headline">
@@ -69,7 +61,6 @@ const stocktickerTemplateHTML = `
             </div>
         </div>
     </header>
-
         <!-- Footer -->
         <footer>
             <div class="row">
@@ -78,10 +69,8 @@ const stocktickerTemplateHTML = `
                 </div>
             </div>
         </footer>
-
     </div>
     <!-- /.container -->
-
     <!-- Ajax call to refresh page periodically -->
     <script type="text/javascript">
         function startRefresh() {
@@ -93,9 +82,7 @@ const stocktickerTemplateHTML = `
             setTimeout(startRefresh,1000);
         });
     </script>
-
 </body>
-
 </html>
 `
 
@@ -138,6 +125,7 @@ func main() {
 	fs := http.FileServer(http.Dir("css"))
 	http.Handle("/css/", http.StripPrefix("/css/", fs))
 	http.HandleFunc("/", stockticker)
+	fmt.Printf("Listening on http://localhost:8080/")
 	http.ListenAndServe(":8080", nil)
 
 }
